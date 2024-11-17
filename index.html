@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+
+        html,body{
+            height:100%;
+        }
+
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: center;
+            flex-wrap: wrap;
+            align-content: center;
+            background: aquamarine;
+        }
+
+        [class$="face"]{
+            margin:16px;
+            padding:4px;
+            background-color: darkcyan;
+            width:104px;
+            height:104px;
+            border-radius: 10%;
+            position: relative;
+        }
+
+        .pip{
+            display:block;
+            width:24px;
+            height:24px;
+            border-radius: 50%;
+            margin:4px;
+            background-color: darkblue;
+        }
+
+        .first-face{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .second-face{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .second-face .pip:nth-of-type(2)
+        {
+            align-self: flex-end;
+        }
+
+        .third-face{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .third-face .pip:nth-of-type(2)
+        {
+            align-self: center;
+        }
+
+        
+        .third-face .pip:nth-of-type(3)
+        {
+            align-self: flex-end;
+        }
+
+        .fourth-face, .sixth-face{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .fourth-face .column, .sixth-face .column{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .fifth-face{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .fifth-face .column{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .fifth-face .column:nth-of-type(2){
+            justify-content: center;
+        }
+        [class$="face"]::after{
+          content: "";
+          position: absolute;
+          background-color: rgb(137, 139, 0);
+            width:104px;
+            height:104px;
+            border-radius: 10%;
+            top: 50px;
+            left: 50px;
+            transform: translate(-50%,-50%);
+            z-index:-1 ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: blueviolet;
+            font-size: 40px;
+
+
+
+        }
+        [class$="face"]:hover::after{
+          z-index: 1;
+        }
+        .first-face::after { content: "1"; }
+        .second-face::after { content: "2"; }
+        .third-face::after { content: "3"; }
+        .fourth-face::after { content: "4"; }
+        .fifth-face::after { content: "5"; }
+        .sixth-face::after { content: "6"; }
+        
+
+    </style>
+</head>
+<body>
+    <div class="first-face">
+        <span class="pip"></span>
+    </div>
+
+    <div class="second-face">
+        <span class="pip"></span>
+        <span class="pip"></span>
+    </div>
+
+    <div class="third-face">
+        <span class="pip"></span>
+        <span class="pip"></span>
+        <span class="pip"></span>
+
+    </div>
+    <div class="fourth-face">
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+
+    </div>
+
+    <div class="fifth-face">
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+
+        <div class="column">
+             <span class="pip"></span>
+        </div>
+
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+
+    </div>
+
+    <div class="sixth-face">
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
